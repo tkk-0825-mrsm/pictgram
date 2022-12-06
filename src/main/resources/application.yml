@@ -7,6 +7,21 @@ spring:
     multipart:
       max-file-size: 20MB
       max-request-size: 20MB
+  mail:
+    default-encoding: UTF-8
+    protocol: smtp
+    host: ${spring.mail.host}
+    port: ${spring.mail.port}
+    username: ${spring.mail.username}
+    password: ${spring.mail.password}
+    properties: 
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  thymeleaf:
+    check-template-location: false    
   datasource:
    driver-class-name: org.postgresql.Driver
    url: jdbc:postgresql://localhost:5432/pictgram
